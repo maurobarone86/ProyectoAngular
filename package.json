@@ -1,4 +1,5 @@
 {
+  "start": "ng serve --proxy-config src/proxy.conf.json",
   "name": "angular-ttps2",
   "version": "0.0.0",
   "scripts": {
