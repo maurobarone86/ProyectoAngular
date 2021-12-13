@@ -3,16 +3,17 @@ import { Router } from '@angular/router';
 
 import { AuthenticationService } from './_services';
 import { User } from './_models';
+import { Usuario } from './_models/usuario';
 
 @Component({ selector: 'app', templateUrl: 'app.component.html' })
 export class AppComponent {
-    currentUser: User;
+    currentUsuario: Usuario;
 
     constructor(
         private router: Router,
         private authenticationService: AuthenticationService
     ) {
-        this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+        this.authenticationService.currentUsuario.subscribe(x => this.currentUsuario = x);
     }
 
     logout() {
