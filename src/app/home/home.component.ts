@@ -24,7 +24,7 @@ export class HomeComponent {
                     this.carteleras = data;
                 },
                 error => {
-                    this.error = 'No se pudieron cargar las carteleras';
+                    this.error = 'No se pudieron cargar las carteleras porque las borre completamente del backend pero funcionaban bien, deje este como ejemplo de consumo api rest';
                     this.loading = false;
                     console.error(error);
                 }
