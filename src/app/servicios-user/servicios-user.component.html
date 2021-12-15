@@ -1,3 +1,37 @@
-<p>servicios-user works!</p>
-
-<a routerLink="/"> Salir</a>
+<div class="contenedor_pricipal">
+    <div class="contenedor_titulo">
+        <h1>Mis servicios</h1>
+    </div>
+    <div class="contenedor" align=center>
+        <div class="contenedor">
+            <div class="contenedor_tabla" *ngIf="mostrar; else elseBlock">
+                <table class="table table-primary table-success table-striped">
+                    <tbody>
+                        <tr class="header_tabla">
+                            <td>Nombre</td>
+                            <td>Descripcion</td>
+                            <td>Twiter</td>
+                            <td colspan="2">Opciones</td>
+                        </tr>
+                        <tr *ngFor="let servicio of servicios">
+                            <td>{{servicio.nombre}}</td>
+                            <td>{{servicio.descripcion}}</td>
+                            <td>{{servicio.twiter}}</td>
+                            <td class="botones"> <button class="btn btn-primary"><a>Editar</a></button></td>
+                            <td class="botones"> <button class="btn btn-danger"><a>Borrar</a></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <ng-template #elseBlock>
+                <div class="mensaje_tabla">
+                    <h3> No posee ningun servicio</h3>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+    <div class="boton_atras d-grid gap-2 col-3 mx-auto">
+        <button class="btn btn-primary active" data-bs-toggle="button" autocomplete="off" aria-pressed="true"><a
+                routerLink="/"> Salir</a></button>
+    </div>
+</div>

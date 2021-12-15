@@ -12,4 +12,8 @@ export class ServicioService {
     getAll() {
         return this.http.get<Servicio[]>(`${env.url}/apiServicio/serviciosActivos`);
     }
+
+    getPorID(id: String) {
+        return this.http.get<Servicio[]>(`${env.url}/api/usuario/servicios/` + id);
+    }
 }

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { first } from 'rxjs/operators';
 
 import { ServicioService } from '../_services/servicios.service';
 import { AuthenticationService } from '../_services';
@@ -23,7 +22,8 @@ export class HomeComponent {
             this.username = datos.username;
         } else {
             this.username = "";
-        }
+        };
+        console.log("datos: ", this.currentUsuario);
     }
 
     ngOnInit() {
