@@ -2,17 +2,29 @@ import { Component } from '@angular/core';
 import { first } from 'rxjs/operators';
 
 import { ServicioService } from '../_services/servicios.service';
+import { AuthenticationService } from '../_services';
 
+import { Usuario } from '../_models/usuario';
 import { Servicio } from '../_models/servicio';
 
-@Component({ templateUrl: 'home.component.html' })
+@Component({ templateUrl: 'home.component.html', styleUrls: ['home.component.css'] })
 export class HomeComponent {
-
+    currentUsuario: Usuario;
+    username: String;
     servicios: Servicio[] = [];
     error: string = '';
     loading: boolean = false;
 
-    constructor(private servicioService: ServicioService) { }
+    constructor(private servicioService: ServicioService,
+        private authenticationService: AuthenticationService) {
+        this.authenticationService.currentUsuario.subscribe(x => this.currentUsuario = x);
+        var datos = JSON.parse(localStorage.getItem('currentUsuario') as string);
+        if (datos != null) {
+            this.username = datos.username;
+        } else {
+            this.username = "";
+        }
+    }
 
     ngOnInit() {
         this.loading = true;
@@ -28,5 +40,9 @@ export class HomeComponent {
                     console.error(error);
                 }
             )
+    }
+    logout() {
+        this.authenticationService.logout();
+        //this.router.navigate(['/login']);
     }
 }

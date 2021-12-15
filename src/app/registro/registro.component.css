@@ -1,0 +1,47 @@
+#Breg{
+    margin-top: 10px; 
+}
+#Breg, #atras > button{
+    background-color: rgb(57, 59, 87); /* Green */
+    margin-right: 15px;
+    margin-bottom: 15px;
+    color: rgb(239, 241, 245);
+    border: 1;
+    font-size: 16px;
+    width: 180px;
+    height: 36px;
+}
+.cuerpo{
+    width: 100%;
+    height: auto;  
+}
+.cuerpo_formu {
+    width: 500px;
+    height: auto;
+    border-width: 2px;
+    border-color: #000000;
+    border-style: solid;
+}
+#formu{
+    width:80%;
+    height: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+#atras{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+ 
+#atras > button > a{
+    text-decoration: none;
+    color: beige;
+}
+header{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.nombre{
+    margin-top: 15px;
+}

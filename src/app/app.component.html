@@ -1,43 +1,5 @@
 <div class="contenedor_principal">
-    <div class="contenedor">
-        <header class="header">
-            <div align="right" class="boton_header">
-                <button class="b1"><a routerLink="/login">Iniciar Sesion</a></button>
-                <button class="b2"><a routerLink="/registro.component">Registrarse</a></button>
-                <button class="b3" (click)="logout()" *ngIf="currentUsuario"><a>Cerrar Sesion</a></button>
-                <button class="b4" *ngIf="currentUsuario"><a>Editar Perfil</a></button>
-            </div>
-
-            <div class="titulo" align="center" *ngIf="currentUsuario">
-                <h1>Bienvenido .....</h1>
-            </div>
-        </header>
-        <ul class="nav" *ngIf="currentUsuario">
-            <li><a href="">Servicios</a>
-                <ul>
-                    <li><a href="">Carga de Servicio</a></li>
-                    <li><a href="">Gestion de Servicios</a></li>
-                </ul>
-            </li>
-            <li><a href="">Eventos</a>
-                <ul>
-                    <li><a href="">Carga de Evento</a></li>
-                    <li><a href="">Gestion de Eventos</a></li>
-                </ul>
-
-            </li>
-            <li>
-                <a href="">Mis Servicios</a>
-            </li>
-        </ul>
-    </div>
-</div>
-<div class="jumbotron">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <router-outlet></router-outlet>
-            </div>
-        </div>
+    <div class="conteiner_componen">
+        <router-outlet></router-outlet>
     </div>
 </div>

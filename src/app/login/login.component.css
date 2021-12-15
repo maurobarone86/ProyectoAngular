@@ -1,0 +1,52 @@
+.formu{
+    width: 400px;
+    height: auto;
+    margin-top: 30px;
+}
+
+.boton, .boton_atras {
+    margin-right: 15px;
+    margin-bottom: 15px;
+    background-color: rgb(39, 138, 56); /* Green */
+    color: rgb(239, 241, 245);
+    border: 1;
+    font-size: 16px;
+    width: 180px;
+    height: 36px;
+    }
+
+    .content_container{
+        width: 550px;
+        height: auto;
+        margin-top: 20px;
+        border: solid;
+        border-color: rgb(11, 63, 31);
+        background-color: #c0f5c3;
+    }
+    .contenido{
+        width: 100%;
+        height: auto;
+    }
+
+    #contraseña{
+        margin-bottom: 10px;
+    }
+
+.boton > a{
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+.boton_atras{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.boton_atras > a{
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+.contenedor_BR{
+    margin-bottom: 20px;
+}

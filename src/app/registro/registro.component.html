@@ -1,42 +1,52 @@
-<h2>Registre sus datos</h2>
-<br>
-<div>
-    <form #registroEventoForm="ngForm" (ngSubmit)="onSubmit(registroEventoForm)">
-        <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input ngModel type="text" class="form-control" id="nombre" required name="nombre">
+<div id="contenedor-formu">
+    <header align="center">
+        <h1>Registrarse</h1>
+    </header>
+    <div class="cuerpo" align="center">
+        <div class="cuerpo_formu">
+            <form #registroEventoForm="ngForm" (ngSubmit)="onSubmit(registroEventoForm)" class="formu" id="formu"
+                align="left">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input ngModel type="text" class="form-control" id="nombre" required name="nombre"
+                        placeholder="Ingrese nombre">
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input ngModel type="text" class="form-control" id="apellido" required name="apellido"
+                        placeholder="Ingrese Apellido">
+                </div>
+                <div class="form-group">
+                    <label for="nombreUsuario">Nombre Usuario:</label>
+                    <input ngModel type="text" class="form-control" id="nombreUsuario" required name="nombreUsuario"
+                        placeholder="Ingrese Nombre de Usuario">
+                </div>
+                <div class="form-group">
+                    <label for="fechaNac">Fecha Nacimiento:</label>
+                    <input ngModel type="date" class="form-control" id="fechaNac" required name="fechaNac">
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección:</label>
+                    <input ngModel type="text" class="form-control" id="direccion" required name="direccion"
+                        placeholder="Ingrese una Direccion">
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input ngModel type="password" class="form-control" id="password" required name="password"
+                        placeholder="Ingrese un password">
+                </div>
+                <input type="submit" class="Breg" id="Breg" value="Login" [disabled]="!registroEventoForm.form.valid">
+            </form>
         </div>
-        <div class="form-group">
-            <label for="apellido">Apellido</label>
-            <input ngModel type="text" class="form-control" id="apellido" required name="apellido">
-        </div>
-        <div class="form-group">
-            <label for="nombreUsuario">Nombre Usuario</label>
-            <input ngModel type="text" class="form-control" id="nombreUsuario" required name="nombreUsuario">
-        </div>
-        <div class="form-group">
-            <label for="fechaNac">Fecha Nacimiento</label>
-            <input ngModel type="date" class="form-control" id="fechaNac" required name="fechaNac">
-        </div>
-        <div class="form-group">
-            <label for="direccion">Dirección</label>
-            <input ngModel type="text" class="form-control" id="direccion" required name="direccion">
-        </div>
-        <div class="form-group">
-            <label for="password">Contraseña</label>
-            <input ngModel type="password" class="form-control" id="password" required name="password">
-        </div>
-
-
-        <button type="submit" class="button" [disabled]="!registroEventoForm.form.valid">Submit</button>
-    </form>
+    </div>
 </div>
-<br>
-<h3>{{mensaje}}</h3>
+<div class="contenedor_mensaje">
+    <h3>{{mensaje}}</h3>
+</div>
 <img *ngIf="loading" class="pl-2"
     src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
 <div *ngIf="error" class="alert alert-danger">{{error}}</div>
 
-<div>
-    <a routerLink="/">ATRAS</a>
+<div id="atras">
+    <button><a routerLink="/">Salir</a></button>
 </div>

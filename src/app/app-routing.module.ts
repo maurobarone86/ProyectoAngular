@@ -4,6 +4,7 @@ import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { AuthGuard } from './_guards';
 import { RegistroComponent } from './registro/registro.component';
+import { ServiciosUserComponent } from './servicios-user/servicios-user.component'
 
 const appRoutes: Routes = [
     {
@@ -19,6 +20,11 @@ const appRoutes: Routes = [
         component: RegistroComponent
     },
 
+    {
+        path: 'misServicios',
+        component: ServiciosUserComponent,
+        canActivate: [AuthGuard]
+    },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];
