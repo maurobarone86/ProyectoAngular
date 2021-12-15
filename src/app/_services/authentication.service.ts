@@ -24,27 +24,27 @@ export class AuthenticationService {
         this.currentUsuarioSubject = new BehaviorSubject<Usuario>(JSON.parse(localStorage.getItem('currentUsuario') as string));
         this.currentUsuario = this.currentUsuarioSubject.asObservable();
     }
-/*
-    public get currentUserValue(): User {
-        return this.currentUserSubject.value;
-    }*/
+    /*
+        public get currentUserValue(): User {
+            return this.currentUserSubject.value;
+        }*/
     public get currentUsuarioValue(): Usuario {
         return this.currentUsuarioSubject.value;
     }
-/*
-    login(username: string, password: string) {
-        return this.http.post<any>(`${env.url}/auth`, { username, password })
-            .pipe(map(credentials => {
-                // login successful si hay un token en la respuesta
-                if (credentials && credentials.token) {
-                    // store user details and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('currentUser', JSON.stringify(credentials));
-                    this.currentUserSubject.next(credentials);
-                }
-
-                return credentials;
-            }));
-    }*/
+    /*
+        login(username: string, password: string) {
+            return this.http.post<any>(`${env.url}/auth`, { username, password })
+                .pipe(map(credentials => {
+                    // login successful si hay un token en la respuesta
+                    if (credentials && credentials.token) {
+                        // store user details and jwt token in local storage to keep user logged in between page refreshes
+                        localStorage.setItem('currentUser', JSON.stringify(credentials));
+                        this.currentUserSubject.next(credentials);
+                    }
+    
+                    return credentials;
+                }));
+        }*/
     login(nombreUsuario: string, password: string) {
         return this.http.post<any>(`${env.url}/auth`, { nombreUsuario, password })
             .pipe(map(credentials => {
@@ -58,12 +58,12 @@ export class AuthenticationService {
                 return credentials;
             }));
     }
-/*
-    logout() {
-        // elimino las credenciales del localstorage al deslogearme
-        localStorage.removeItem('currentUser');
-        this.currentUserSubject.next(null as any);
-    }*/
+    /*
+        logout() {
+            // elimino las credenciales del localstorage al deslogearme
+            localStorage.removeItem('currentUser');
+            this.currentUserSubject.next(null as any);
+        }*/
     logout() {
         // elimino las credenciales del localstorage al deslogearme
         localStorage.removeItem('currentUsuario');

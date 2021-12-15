@@ -8,8 +8,7 @@ import { RegistroComponent } from './registro/registro.component';
 const appRoutes: Routes = [
     {
         path: '',
-        component: HomeComponent,
-        canActivate: [AuthGuard]
+        component: HomeComponent
     },
     {
         path: 'login',

@@ -27,6 +27,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -74,10 +75,8 @@
             "production": {
               "browserTarget": "angularTTPS2:build:production"
             },
-                       
             "development": {
               "browserTarget": "angularTTPS2:build:development"
-             
             }
           },
           "defaultConfiguration": "development"
