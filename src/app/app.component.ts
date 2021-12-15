@@ -5,7 +5,7 @@ import { AuthenticationService } from './_services';
 import { User } from './_models';
 import { Usuario } from './_models/usuario';
 
-@Component({ selector: 'app', templateUrl: 'app.component.html' })
+@Component({ selector: 'app', templateUrl: 'app.component.html', styleUrls: ['app.component.css'] })
 export class AppComponent {
     currentUsuario: Usuario;
 
