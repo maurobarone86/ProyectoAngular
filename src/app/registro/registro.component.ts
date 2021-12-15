@@ -1,7 +1,8 @@
-import { Component, OnInit, ɵRuntimeErrorCode } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Usuario } from '../_models/usuario';
 import { NgForm } from '@angular/forms';
 import { UsuarioService } from '../_services/usuario.service';
+
 
 @Component({
   selector: 'app-registro',
@@ -29,23 +30,16 @@ export class RegistroComponent implements OnInit {
       this.mensaje= "";
         }
     this.submitted=true;
-    //EventosServicio.prototype.addEvento(this.usuario);
-    //Agregar Usuario
-    this.usuarioService.crearUsuario(this.usuario)
-            .subscribe(response => { 
-              this.loading = false; 
-              this.respuesta = response.status;});
-    if(this.respuesta === 200) {this.mensaje = "El usuario fue generado correctamente"}
-    else {this.mensaje = "El usuario no fue generado porque ya existe ese nombre de usuario, por favor intente con otro"} 
-    console.log(this.respuesta)
-      
-
-    //console.log(this.usuario)
-    
+    this.loading = true; 
+    this.usuarioService.crearUsuario(this.usuario).subscribe(response => { 
+      this.respuesta=response.status;
+      if(this.respuesta === 200) {
+        this.mensaje = "El usuario fue generado correctamente"}
+      else {this.mensaje = "El usuario no fue generado porque ya existe ese nombre de usuario, por favor intente con otro"} 
     this.usuario = new Usuario();
+    this.loading = false; 
+    });
   }
-
   ngOnInit(): void {
   }
-
 }
