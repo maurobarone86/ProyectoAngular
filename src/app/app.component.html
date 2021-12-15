@@ -3,7 +3,7 @@
         <header class="header">
             <div align="right" class="boton_header">
                 <button class="b1"><a routerLink="/login">Iniciar Sesion</a></button>
-                <button class="b2"><a routerLink="/registrarse">Registrarse</a></button>
+                <button class="b2"><a routerLink="/registro.component">Registrarse</a></button>
                 <button class="b3" (click)="logout()" *ngIf="currentUsuario"><a>Cerrar Sesion</a></button>
                 <button class="b4" *ngIf="currentUsuario"><a>Editar Perfil</a></button>
             </div>
@@ -12,13 +12,6 @@
                 <h1>Bienvenido .....</h1>
             </div>
         </header>
-        <hr>
-        <div align="right">
-            <form>
-                <input type="search" name="q" placeholder="BUSCAR">
-                <button class="boton_buscar">Buscar</button>
-            </form>
-        </div>
         <ul class="nav" *ngIf="currentUsuario">
             <li><a href="">Servicios</a>
                 <ul>
