@@ -11,15 +11,20 @@
                             <td>Nombre</td>
                             <td>Descripcion</td>
                             <td>Twiter</td>
-                            <td colspan="2">Opciones</td>
+                            <td colspan="3">Opciones</td>
                         </tr>
                         <tr *ngFor="let servicio of servicios">
                             <td>{{servicio.nombre}}</td>
                             <td>{{servicio.descripcion}}</td>
                             <td>{{servicio.twiter}}</td>
-                            <td class="botones"> <button class="btn btn-primary"><a routerLink="/detalle-servicio.component" >Detalle</a></button></td>
-                            <td class="botones"> <button class="btn btn-primary"><a routerLink="/edit-servicio.component" >Editar</a></button></td>
-                            <td class="botones"> <button class="btn btn-danger" (click)="borrar(servicio.id)">Borrar</button></td>
+                            <td class="botones"> <button class="btn btn-primary"><a
+                                        [routerLink]="['/detalle-servicio.component', servicio.id]">Detalle</a></button>
+                            </td>
+                            <td class="botones"> <button class="btn btn-primary"><a
+                                        [routerLink]="['/edit-servicio.component', servicio.id]">Editar</a></button>
+                            </td>
+                            <td class="botones"> <button class="btn btn-danger"
+                                    (click)="borrar(servicio.id)">Borrar</button></td>
                         </tr>
                     </tbody>
                 </table>

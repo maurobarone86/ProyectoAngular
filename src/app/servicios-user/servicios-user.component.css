@@ -14,7 +14,7 @@
 .botones{
     text-align: center;
 }
-.boton_atras > button > a{
+.boton_atras > button > a, .botones > button > a{
     text-decoration: none;
     color: antiquewhite;
 }

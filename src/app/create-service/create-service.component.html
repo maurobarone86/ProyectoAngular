@@ -8,30 +8,37 @@
                 align="left">
                 <div class="form-group">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" class="form-control"  [(ngModel)]="servicio.nombre" id="servicio.nombre" name="servicio.nombre" #servicio.nombre>
+                    <input type="text" class="form-control" [(ngModel)]="servicio.nombre" id="servicio.nombre"
+                        name="servicio.nombre" #servicio.nombre>
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripcion:</label>
-                    <input type="text" class="form-control"  [(ngModel)]="servicio.descripcion" id="servicio.descripcion" name="servicio.descripcion" #servicio.descripcion>
+                    <input type="text" class="form-control" [(ngModel)]="servicio.descripcion" id="servicio.descripcion"
+                        name="servicio.descripcion" #servicio.descripcion>
                 </div>
                 <div class="form-group">
                     <label for="url">Url:</label>
-                    <input type="text" class="form-control"  [(ngModel)]="servicio.url" id="servicio.url" name="servicio.url" #servicio.url>
+                    <input type="text" class="form-control" [(ngModel)]="servicio.url" id="servicio.url"
+                        name="servicio.url" #servicio.url>
                 </div>
                 <div class="form-group">
                     <label for="whatsapp">WhatsApp:</label>
-                    <input type="number" class="form-control"  [(ngModel)]="servicio.whatsapp" id="servicio.whatsapp" name="servicio.whatsapp" #servicio.whatsapp>
+                    <input type="number" class="form-control" [(ngModel)]="servicio.whatsapp" id="servicio.whatsapp"
+                        name="servicio.whatsapp" #servicio.whatsapp>
                 </div>
                 <div class="form-group">
                     <label for="instagram">Instagram:</label>
-                    <input type="text" class="form-control"  [(ngModel)]="servicio.instagram" id="servicio.instagram" name="servicio.instagram" #servicio.instagram>
+                    <input type="text" class="form-control" [(ngModel)]="servicio.instagram" id="servicio.instagram"
+                        name="servicio.instagram" #servicio.instagram>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="twiter">Twiter:</label>
-                    <input type="text" class="form-control"  [(ngModel)]="servicio.twiter" id="servicio.twiter" name="servicio.twiter" #servicio.twiter>
+                    <input type="text" class="form-control" [(ngModel)]="servicio.twiter" id="servicio.twiter"
+                        name="servicio.twiter" #servicio.twiter>
                 </div>
-                <input type="submit" class="Breg" id="Breg" value="Crear Servicio" [disabled]="!registroEventoForm.form.valid">
+                <input type="submit" class="btn btn-success" id="Breg" value="Crear Servicio"
+                    [disabled]="!registroEventoForm.form.valid">
             </form>
         </div>
     </div>
@@ -43,7 +50,7 @@
     src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
 <div *ngIf="error" class="alert alert-danger">{{error}}</div>
 
-<div id="atras">
-    <button><a routerLink="/">Salir</a></button>
+<div id="atras" class="boton_atras d-grid gap-2 col-3 mx-auto">
+    <button class="btn btn-primary active boton" data-bs-toggle="button" autocomplete="off" aria-pressed="true"><a
+            routerLink="/">Salir</a></button>
 </div>
-

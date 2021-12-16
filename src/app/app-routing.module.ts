@@ -26,12 +26,12 @@ const appRoutes: Routes = [
         canActivate: [AuthGuard]
     },
     {
-        path: 'edit-servicio.component',
+        path: 'edit-servicio.component/:id',
         component: EditServicioComponent,
         canActivate: [AuthGuard]
     },
     {
-        path: 'detalle-servicio.component',
+        path: 'detalle-servicio.component/:id',
         component: DetalleServicioComponent,
         canActivate: [AuthGuard]
     },
