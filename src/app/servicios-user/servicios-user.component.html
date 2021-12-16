@@ -17,12 +17,14 @@
                             <td>{{servicio.nombre}}</td>
                             <td>{{servicio.descripcion}}</td>
                             <td>{{servicio.twiter}}</td>
-                            <td class="botones"> <button class="btn btn-primary"><a>Editar</a></button></td>
-                            <td class="botones"> <button class="btn btn-danger"><a>Borrar</a></button></td>
+                            <td class="botones"> <button class="btn btn-primary"><a routerLink="/detalle-servicio.component" >Detalle</a></button></td>
+                            <td class="botones"> <button class="btn btn-primary"><a routerLink="/edit-servicio.component" >Editar</a></button></td>
+                            <td class="botones"> <button class="btn btn-danger" (click)="borrar(servicio.id)">Borrar</button></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+            {{mensaje}}
             <ng-template #elseBlock>
                 <div class="mensaje_tabla">
                     <h3> No posee ningun servicio</h3>

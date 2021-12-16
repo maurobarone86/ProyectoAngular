@@ -18,24 +18,31 @@ export class ServiciosUserComponent implements OnInit {
   id: String;
   error: String;
   mostrar: Boolean;
+  mensaje:string="";
+  respuesta:Number;
   constructor(private servicioService: ServicioService) {
     var datos = JSON.parse(localStorage.getItem('currentUsuario') as string);
     if (datos != null) {
       this.username = datos.username;
       this.id = datos.id;
+      
     } else {
       this.username = "";
       this.id = "";
     };
     this.mostrar = false;
+    console.log(this.id)
   }
 
-  ngOnInit(): void {
+  actualizar(){
+
+    this.mensaje="";
     if (this.id != "") {
       this.servicioService.getPorID(this.id)
         .subscribe(
           data => {
             this.servicios = data;
+            console.log(this.servicios)
             if (this.servicios != null) {
               this.mostrar = true;
             }
@@ -48,6 +55,35 @@ export class ServiciosUserComponent implements OnInit {
     } else {
       console.log("No se inicializo corectamente el id");
     }
+
   }
+
+  ngOnInit(): void {
+    this.actualizar()
+  }
+borrar(id:Number|undefined){
+  console.log("se solicito el borrado del servicio id :"+id)
+  if (id != undefined) {
+    this.servicioService.delServicioById(id).subscribe(
+      response => {
+        this.respuesta=response.status;
+        console.log(this.respuesta)
+        if(this.respuesta === 200) {
+          this.mensaje = "El servicio se borro correctamente"
+          this.actualizar();}
+        else {
+          this.mensaje = "Ocurrio un error en el borrado del servicio"} 
+      
+        
+      },
+      error => {
+        this.error = 'No se borro correctamente el servicio';
+        console.error(error);
+      }
+    )
+
+  }
+}
+
 
 }

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Usuario } from '../_models/usuario';
 import { HttpClient } from '@angular/common/http';
 import { environment as env } from 'src/environments/environment';
+import { Observable } from 'rxjs';
+import { catchError } from 'rxjs';
 
 
 
@@ -14,4 +16,14 @@ export class UsuarioService {
   public crearUsuario(usuario:Usuario){
       return this.http.post(`${env.url}/api/usuario`, usuario, {observe: 'response'})
   }
+  public getUsuarioById(id:String) {
+    return this.http.get<Usuario>(`${env.url}/api/usuario/`+id);
+
+  }
+  public putUsuarioById(id:String, usuario:Usuario){
+    
+    return this.http.put(`${env.url}/api/usuario/`+id, usuario, {observe: 'response'})
+  }
+
+
 }

@@ -12,6 +12,10 @@ import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegistroComponent } from './registro/registro.component';
 import { ServiciosUserComponent } from './servicios-user/servicios-user.component';
+import { EditPerfilComponent } from './edit-perfil/edit-perfil.component';
+import { EditServicioComponent } from './edit-servicio/edit-servicio.component';
+import { DetalleServicioComponent } from './detalle-servicio/detalle-servicio.component';
+import { CreateServiceComponent } from './create-service/create-service.component';
 
 @NgModule({
     imports: [
@@ -26,7 +30,11 @@ import { ServiciosUserComponent } from './servicios-user/servicios-user.componen
         HomeComponent,
         LoginComponent,
         RegistroComponent,
-        ServiciosUserComponent
+        ServiciosUserComponent,
+        EditPerfilComponent,
+        EditServicioComponent,
+        DetalleServicioComponent,
+        CreateServiceComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

@@ -2,7 +2,7 @@
     <div class="contenedor">
         <header class="header">
             <div align="right" class="boton_header">
-                <button class="b1" *ngIf="currentUsuario; else elseBlock"><a>Editar Perfil</a></button>
+                <button class="b1" *ngIf="currentUsuario; else elseBlock"><a routerLink="/edit-perfil.component">Editar Perfil</a></button>
                 <ng-template #elseBlock><button class="b2"><a routerLink="/login">Iniciar Sesion</a></button>
                 </ng-template>
 
@@ -18,7 +18,7 @@
         <div class="contenedor_nav">
             <ul class="nav" *ngIf="currentUsuario">
                 <li>
-                    <a href="">CargarServicios</a>
+                    <a routerLink="/create-service.component">CargarServicios</a>
                 </li>
                 <li>
                     <a href="/misServicios">Mis Servicios</a>

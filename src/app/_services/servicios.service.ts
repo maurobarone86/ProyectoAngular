@@ -16,4 +16,12 @@ export class ServicioService {
     getPorID(id: String) {
         return this.http.get<Servicio[]>(`${env.url}/api/usuario/servicios/` + id);
     }
+    public postServicioById(id:String, servicio:Servicio){
+    
+        return this.http.post(`${env.url}/api/usuario/altaServicio/`+id, servicio, {observe: 'response'})
+      }
+
+    public delServicioById(id:Number){
+        return this.http.delete(`${env.url}/apiServicio/deleteLogico/`+id, {observe: 'response'})
+    }
 }
