@@ -16,6 +16,8 @@ export class EditPerfilComponent implements OnInit {
   error: string = '';
   loading: boolean = false;
   respuesta: Number;
+  fechaAnt:Number | unknown;
+  fechaNueva:Number | unknown;
   
   modified:boolean=false;
   id:String=JSON.parse(localStorage.getItem('currentUsuario') as string).id;
@@ -27,12 +29,24 @@ export class EditPerfilComponent implements OnInit {
       
       this.mensaje= "";
       this.loading = true; 
-      console.log(this.usuario.fechaNac )
+      
+      //console.log(this.usuario.fechaNac )
+      this.fechaNueva = this.usuario.fechaNac
+      if (this.fechaNueva != this.fechaAnt){
+        this.usuario.fechaNac=new Date(this.usuario.fechaNac)
+      this.usuario.fechaNac.setDate(this.usuario.fechaNac.getDate() +1)
+      }
+      
+
       this.usuarioService.putUsuarioById(this.id,this.usuario).subscribe(response => { 
         this.respuesta=response.status;
         console.log(this.respuesta)
         if(this.respuesta === 200) {
-          this.mensaje = "El usuario fue actualizado correctamente"}
+          this.mensaje = "El usuario fue actualizado correctamente"
+          var fecha=new Date(this.usuario.fechaNac)
+        //this.usuario.fechahtml= (fecha.getUTCFullYear()+"/"+fecha.getMonth()+"/"+fecha.getDate()) ;
+        this.usuario.fechahtml= (fecha.getDate()+"/"+fecha.getMonth()+"/"+fecha.getUTCFullYear()) ;
+      }
         else {
           this.mensaje = "Ocurrio un error en la actualizacion del usuario"} 
       this.loading = false;
@@ -46,10 +60,15 @@ export class EditPerfilComponent implements OnInit {
     console.log(this.id)
     this.usuarioService.getUsuarioById(this.id).subscribe(
       data => {
-        this.usuario = data;
-        this.usuario.fechaNac= (new Date( this.usuario.fechaNac  ));
-        console.log(this.usuario.fechaNac)
         
+        this.usuario = data;
+        this.fechaAnt = this.usuario.fechaNac
+        var fecha=new Date(this.usuario.fechaNac)
+        //this.usuario.fechahtml= (fecha.getUTCFullYear()+"/"+fecha.getMonth()+"/"+fecha.getDate()) ;
+        this.usuario.fechahtml= (fecha.getDate()+"/"+fecha.getMonth()+"/"+fecha.getUTCFullYear()) ;
+        console.log(this.usuario.fechahtml)
+        
+        //console.log(this.usuario.fechaNac)
         this.loading = false;
         }
       ,

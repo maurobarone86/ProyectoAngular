@@ -11,6 +11,7 @@ export class Usuario {
     servicios: Servicio[];
     eventos: Evento[];
     token?: string;
+    fechahtml?:String
 
 
     constructor(nombre: string = "", apellido: string = "", fechaNac: Date = new Date(), direccion: string = "", nombreUsuario: string = "", password: string = "", servicios: Servicio[] = [], eventos: Evento[] = [], token: string = "") {
