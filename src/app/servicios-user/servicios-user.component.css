@@ -1,5 +1,5 @@
 .contenedor_tabla{
-    width: 900px;
+    width: 1200px;
 }
 .header_tabla{
     text-align: center;
@@ -17,4 +17,9 @@
 .boton_atras > button > a, .botones > button > a{
     text-decoration: none;
     color: antiquewhite;
+}
+
+h4{
+    margin-left: 0%;
+    margin-right: 0%;
 }

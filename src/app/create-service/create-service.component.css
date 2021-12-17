@@ -1,5 +1,8 @@
 .cuerpo_formu{
     width: 700px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: cornflowerblue;
 }
 
 header{
@@ -14,4 +17,11 @@ header{
 .boton_atras{
     margin-bottom: 25px;
     margin-top: 15px;
+}
+
+.formu{
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }

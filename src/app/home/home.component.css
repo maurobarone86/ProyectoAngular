@@ -6,6 +6,7 @@
 .titulo_bienvenida{
     margin-bottom: 15px;
     margin-top: 10px;
+    background-color: rgb(205, 205, 230);
 }      
 
 #header {
@@ -70,8 +71,15 @@ ul, ol {
 .datos_servicio{
     width: 100%;
     height: 100%;
+    
 }
-.boton_header button, .boton_buscar, .contenedor_button button{
+
+.nombre_service{
+    margin-left: 25px;
+    margin-top: 15px;
+    margin-right: 25px;
+}
+ .boton_buscar, .contenedor_button button{
     background-color: rgb(57, 59, 87); /* Green */
     color: rgb(239, 241, 245);
   }
@@ -84,9 +92,8 @@ ul, ol {
 p{
     display: inline;
 }
-
-.boton_header{
-    margin-top: 5px;
+.boton_header > a{
+    margin-top: 10px;
 }
 
 .contenedor{
@@ -105,16 +112,17 @@ p{
 .contenedor_texto{
     margin-left: 40px;
     margin-right: 40px;
+    background-color: rgb(189, 192, 221);
+    border-color: rgb(28, 16, 59);
+    border-style: solid;
 }
 .contenedor_titulo_serv{
     text-align: center;
     margin-top: 20px;
-    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(216, 216, 240);
 }
 
-.contenedor_servicios{
-    margin-bottom: 25px;
-}
 h4{
     margin-top: 0px;
     margin-bottom: 0px;
@@ -124,4 +132,17 @@ h4{
 }
 .contenedor_serv{
     width: 900px;
+}
+.texto{
+    margin-left: 25px;
+    margin-bottom: 15px;
+}
+
+.editar{
+    margin-right: 5px;
+}
+
+.contenedor_principal{
+    background-color: rgb(252, 240, 240);
+    margin-top: 0%;
 }

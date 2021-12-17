@@ -1,6 +1,6 @@
 <div id="contenedor-formu">
     <header align="center">
-        <h1>Registrarse</h1>
+        <h1>Nuevo Servicio</h1>
     </header>
     <div class="cuerpo" align="center">
         <div class="cuerpo_formu">
@@ -9,33 +9,34 @@
                 <div class="form-group">
                     <label for="nombre">Nombre:</label>
                     <input type="text" class="form-control" [(ngModel)]="servicio.nombre" id="servicio.nombre"
-                        name="servicio.nombre" #servicio.nombre>
+                        name="servicio.nombre" #servicio.nombre required placeholder="ingrese su nombre">
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripcion:</label>
                     <input type="text" class="form-control" [(ngModel)]="servicio.descripcion" id="servicio.descripcion"
-                        name="servicio.descripcion" #servicio.descripcion>
+                        name="servicio.descripcion" #servicio.descripcion required
+                        placeholder="Ingrese una descripcion del servicio">
                 </div>
                 <div class="form-group">
                     <label for="url">Url:</label>
                     <input type="text" class="form-control" [(ngModel)]="servicio.url" id="servicio.url"
-                        name="servicio.url" #servicio.url>
+                        name="servicio.url" #servicio.url required placeholder="Ingrese una url">
                 </div>
                 <div class="form-group">
                     <label for="whatsapp">WhatsApp:</label>
                     <input type="number" class="form-control" [(ngModel)]="servicio.whatsapp" id="servicio.whatsapp"
-                        name="servicio.whatsapp" #servicio.whatsapp>
+                        name="servicio.whatsapp" #servicio.whatsapp required>
                 </div>
                 <div class="form-group">
                     <label for="instagram">Instagram:</label>
                     <input type="text" class="form-control" [(ngModel)]="servicio.instagram" id="servicio.instagram"
-                        name="servicio.instagram" #servicio.instagram>
+                        name="servicio.instagram" #servicio.instagram placeholder="Ingrese su Instagram">
                 </div>
 
                 <div class="form-group">
                     <label for="twiter">Twiter:</label>
                     <input type="text" class="form-control" [(ngModel)]="servicio.twiter" id="servicio.twiter"
-                        name="servicio.twiter" #servicio.twiter>
+                        name="servicio.twiter" #servicio.twiter placeholder="Ingrese su Twiter">
                 </div>
                 <input type="submit" class="btn btn-success" id="Breg" value="Crear Servicio"
                     [disabled]="!registroEventoForm.form.valid">

@@ -1,10 +1,21 @@
 .cuerpo_formu{
     width: 700px;
+    
+    border-style: solid;
+    border-width: 2px;
+}
+.formu{
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
-header{
+.conteiner_titulo{
     margin-top: 25px;
     margin-bottom: 15px;
+    background-color: rgb(167, 207, 167);
+    width: 900px;
 }
 
 .boton > a{
@@ -14,4 +25,12 @@ header{
 .boton_atras{
     margin-bottom: 25px;
     margin-top: 15px;
+}
+
+.conteiner{
+    width: 1000px;
+}
+.titulo{
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
