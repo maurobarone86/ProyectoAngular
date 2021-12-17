@@ -2,3 +2,23 @@
     text-decoration: none;
     color: rgb(231, 238, 231);
 }
+
+.titulo{
+    text-align: center;
+}
+.conteiner_table{
+    width: 800px;
+}
+
+.contenedor_titulo{
+    background-color: rgb(170, 218, 219) ;
+    width: 800px;
+}
+
+.contenedor_titulo > h1{
+    margin-bottom: 20px;
+}
+
+.conteiner{
+    margin-top: 25px;
+}
