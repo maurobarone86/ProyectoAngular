@@ -40,6 +40,9 @@ export class RegistroComponent implements OnInit {
     this.loading = false; 
     });
   }
+  
+
+
   ngOnInit(): void {
   }
 }

@@ -1,30 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { waitForAsync } from '@angular/core/testing';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { Usuario } from '../_models/usuario';
+
 
 import { AuthenticationService } from '../_services';
 
 @Component({ templateUrl: 'login.component.html', styleUrls: ['login.component.css'] })
 export class LoginComponent implements OnInit {
-    loginForm: FormGroup
+    usuario:Usuario=new Usuario()
     loading = false;
     submitted = false;
     returnUrl: string;
     error = '';
+    
 
-    constructor(
-        private formBuilder: FormBuilder,
+    constructor( 
+       
         private route: ActivatedRoute,
         private router: Router,
         private authenticationService: AuthenticationService
     ) { }
 
     ngOnInit() {
-        this.loginForm = this.formBuilder.group({
-            username: ['', Validators.required],
-            password: ['', Validators.required]
-        });
+        
 
         // elimino las credenciales del usuario, si es que existen
         this.authenticationService.logout();
@@ -32,27 +32,32 @@ export class LoginComponent implements OnInit {
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
 
-    get f() { return this.loginForm.controls; }
-
+    
     onSubmit() {
         this.submitted = true;
 
         // Valido que el formulario sea valido antes del submit
-        if (this.loginForm.invalid) {
-            return;
-        }
-
+        if (this.usuario.nombreUsuario !="" && this.usuario.password!="" ) {
+            
+        
+            this.error ="";
         this.loading = true;
-        this.authenticationService.login(this.f['username'].value, this.f['password'].value)
+        this.authenticationService.login(this.usuario.nombreUsuario as string, this.usuario.password as string)
             .pipe(first())
+            
             .subscribe(
                 data => {
                     this.router.navigate([this.returnUrl]);
                     this.loading = false;
+                    this.submitted = false;
                 },
                 error => {
                     this.error = 'Nombre de usuario o Contraseña incorrectas';
                     this.loading = false;
+                    this.submitted = false;
+                    window.onbeforeunload = (event) => {
+                        event.preventDefault();
+                     }
                 });
-    }
+    }}
 }

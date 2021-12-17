@@ -7,32 +7,27 @@
     </div>
     <div class="contenido" align="center">
         <div class="content_container" align="center">
-            <div *ngIf="!loading">
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="formu" align="left">
+            <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="formu" id="formu"align="left">
+            
                 <div class="form-group">
-                    <label for="username">Nombre de usuario:</label>
-                    <input type="text" formControlName="username" class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && ['loginForm.username.errors'] }" />
-                    <div *ngIf="submitted && ['loginForm.username.errors']" class="invalid-feedback">
-                        <div *ngIf="['loginForm.username.errors.required']">Username es requerido</div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="password">Contraseña:</label>
-                    <input type="password" formControlName="password" class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && ['loginForm.password.errors'] }" />
-                    <div *ngIf="submitted && ['loginForm.password.errors']" class="invalid-feedback">
-                        <div *ngIf="['loginForm.password.errors.required']">Password es requerido</div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <button [disabled]="loading" class="boton">Login</button>
-                    
+                    <label for="usuario.nombreUsuario">Nombre de usuario:</label>
+                    <input type="text" class="form-control" [(ngModel)]="usuario.nombreUsuario" id="usuario.nombreUsuario"
+                    name="usuario.nombreUsuario" #usuario.nombreUsuario>
                 </div>
                 
+                <div class="form-group">
+                    <label for="usuario.password">Contraseña:</label>
+                    <input type="password" class="form-control" [(ngModel)]="usuario.password" id="usuario.password"
+                    name="usuario.password" #usuario.password>
+                </div>
+
+
+                <input type="submit" class="btn btn-success" id="Breg" value="Login"
+                        [disabled]="!loginForm.form.valid">
+                               
             </form>
-        </div>
-            <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+        
+            <div >{{error}}</div>
             <img *ngIf="loading" class="pl-2"
                         src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
             <div class="contenedor_BR"> <a routerLink="/registro.component">Registrarse</a> </div>
@@ -40,4 +35,4 @@
     </div>
 </div>
 
-<div class="contendor_BA"><button class="boton_atras"><a routerLink="/">Atras</a></button></div>
+<div class="contendor_BA"><button class="boton_atras" routerLink="/">Atras</button></div>

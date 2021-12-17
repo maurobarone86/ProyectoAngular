@@ -27,6 +27,7 @@ export class EditPerfilComponent implements OnInit {
       
       this.mensaje= "";
       this.loading = true; 
+      console.log(this.usuario.fechaNac )
       this.usuarioService.putUsuarioById(this.id,this.usuario).subscribe(response => { 
         this.respuesta=response.status;
         console.log(this.respuesta)
@@ -46,8 +47,9 @@ export class EditPerfilComponent implements OnInit {
     this.usuarioService.getUsuarioById(this.id).subscribe(
       data => {
         this.usuario = data;
-        console.log(this.usuario)
-        console.log(this.usuario.fechaNac as Date)
+        this.usuario.fechaNac= (new Date( this.usuario.fechaNac  ));
+        console.log(this.usuario.fechaNac)
+        
         this.loading = false;
         }
       ,

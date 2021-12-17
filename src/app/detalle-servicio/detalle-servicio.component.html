@@ -1,12 +1,21 @@
-<div class="contenedor_principal">
-    <div class="contenedor_titulo" align="center">
+<div class="contenedor_principal"  align="center">
+    <div class="contenedor_titulo" >
         <h1>Detalles del Servicio</h1>
     </div>
-    <div class="contenedor">
-        <h1> {{servicio.nombre}}</h1>
+   <br>
+        <h3> Nombre: {{servicio.nombre}}</h3>
+  
+        <h4>Descripcion: {{servicio.descripcion}}</h4>
+    
+   
+        <h4>Url: {{servicio.url}}</h4>
+    
+        <h4>WhatsApp: {{servicio.whatsapp}}</h4>
+   
+        <h4>Instagram: {{servicio.instagram}}</h4>
+   
+        <h4>Twiter: {{servicio.twiter}}</h4>
     </div>
     <div class="boton_atras d-grid gap-2 col-3 mx-auto">
-        <button class="btn btn-primary active boton" data-bs-toggle="button" autocomplete="off" aria-pressed="true"><a
-                routerLink="/misServicios">Salir</a></button>
+        <button class="btn btn-primary active boton" data-bs-toggle="button" autocomplete="off" aria-pressed="true" routerLink="/misServicios">Salir</button>
     </div>
-</div>
