@@ -60,11 +60,6 @@ ul, ol {
     position:relative;
 }
 
-.boton_buscar{
-    border: 1;
-    width: 100px;
-    height: 30px;
-}
 .datos_servicio h3{
     display: inline;    
 }
@@ -92,9 +87,7 @@ ul, ol {
 p{
     display: inline;
 }
-.boton_header > a{
-    margin-top: 10px;
-}
+
 
 .contenedor{
     margin-left: 20px;
@@ -140,9 +133,4 @@ h4{
 
 .editar{
     margin-right: 5px;
-}
-
-.contenedor_principal{
-    background-color: rgb(252, 240, 240);
-    margin-top: 0%;
 }

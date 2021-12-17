@@ -1,32 +1,5 @@
 <div class="contenedor_principal">
     <div class="contenedor">
-        <header class="header">
-            <div align="right" class="boton_header">
-                <a routerLink="/edit-perfil.component" *ngIf="currentUsuario; else elseBlock"
-                    class="btn btn-outline-success editar">Editar Perfil</a>
-                <ng-template #elseBlock>
-                    <a routerLink="/login" class="btn btn-outline-success">Iniciar Sesion</a>
-                </ng-template>
-
-
-                <a (click)="logout()" *ngIf="currentUsuario" class="btn btn-outline-success">Cerrar
-                    Sesion</a>
-            </div>
-            <hr>
-            <div class="titulo_bienvenida" align="center" *ngIf="currentUsuario">
-                <h1>Bienvenido {{username}}</h1>
-            </div>
-        </header>
-        <div class="contenedor_nav" *ngIf="currentUsuario">
-            <ul class="nav">
-                <li>
-                    <a routerLink="/create-service.component">CargarServicios</a>
-                </li>
-                <li>
-                    <a href="/misServicios">Mis Servicios</a>
-                </li>
-            </ul>
-        </div>
         <div class="contenedor_servicios">
             <div class="contenedor_titulo_serv">
                 <h2>Servicios </h2>

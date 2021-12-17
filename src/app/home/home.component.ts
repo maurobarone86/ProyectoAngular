@@ -8,22 +8,12 @@ import { Servicio } from '../_models/servicio';
 
 @Component({ templateUrl: 'home.component.html', styleUrls: ['home.component.css'] })
 export class HomeComponent {
-    currentUsuario: Usuario;
-    username: String;
     servicios: Servicio[] = [];
     error: string = '';
     loading: boolean = false;
 
     constructor(private servicioService: ServicioService,
         private authenticationService: AuthenticationService) {
-        this.authenticationService.currentUsuario.subscribe(x => this.currentUsuario = x);
-        var datos = JSON.parse(localStorage.getItem('currentUsuario') as string);
-        if (datos != null) {
-            this.username = datos.username;
-        } else {
-            this.username = "";
-        };
-        console.log("datos: ", this.currentUsuario);
     }
 
     ngOnInit() {

@@ -16,6 +16,7 @@ import { EditPerfilComponent } from './edit-perfil/edit-perfil.component';
 import { EditServicioComponent } from './edit-servicio/edit-servicio.component';
 import { DetalleServicioComponent } from './detalle-servicio/detalle-servicio.component';
 import { CreateServiceComponent } from './create-service/create-service.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
     imports: [
@@ -34,7 +35,8 @@ import { CreateServiceComponent } from './create-service/create-service.componen
         EditPerfilComponent,
         EditServicioComponent,
         DetalleServicioComponent,
-        CreateServiceComponent
+        CreateServiceComponent,
+        NavComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
